@@ -1,0 +1,31 @@
+{
+  "name": "NHS ETL Pipeline",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+
+  "postCreateCommand": "pip install -r requirements.txt && pip install pytest pytest-cov nbconvert jupyter flake8",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "ms-python.flake8",
+        "eamodio.gitlens",
+        "GitHub.vscode-pull-request-github"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "editor.formatOnSave": true,
+        "editor.rulers": [100],
+        "python.testing.pytestEnabled": true,
+        "python.testing.pytestArgs": ["tests/"]
+      }
+    }
+  },
+
+  "forwardPorts": [],
+
+  "remoteUser": "vscode",
+
+  "postStartCommand": "echo '✅ NHS ETL Pipeline environment ready. Open notebooks/etl_pipeline.ipynb to begin.'"
+}
